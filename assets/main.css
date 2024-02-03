@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'ChalgaVP';
+    font-weight: 600;
+    font-style: light;
+    src: url(/public/fonts/Chalga-VP-Light.otf) format('otf');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NimbusSanL';
+    font-weight: 400;
+    src: url(/public/fonts/NimbusSanL-Bol.otf) format('otf');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NimbusSanL';
+    font-weight: 600;
+    font-style: italic;
+    src: url(/public/fonts/NimbusSanL-BolIta.otf) format('otf');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NimbusSanL';
+    font-weight: 500;
+    src: url(/public/fonts/NimbusSanL-Reg.otf) format('otf');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NimbusSanL';
+    font-weight: 400;
+    font-style: italic;
+    src: url(/public/fonts/NimbusSanL-RegIta.otf) format('otf');
+    font-display: swap;
+  }
+
+  ::selection {
+    color: #f9f9f9;
+    background: #a04539;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    transition: all 0.3s;
+  }
+
+  @layer components {
+    .outline-custom {
+      @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline focus-visible:outline-primary;
+    }
+  }
+}
+
+html {
+  scroll-margin-top: 300px;
+  scroll-padding-top: 300px;
+}
