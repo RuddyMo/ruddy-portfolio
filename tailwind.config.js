@@ -12,18 +12,18 @@ module.exports = {
   css: ['~/assets/main.css'],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'Lato', 'Poppins', 'Arial'],
-      title: ['Chalga VP Light', 'Arial', 'Lato'],
+      sans: ['Nimbus Sans Novus W01 Regular', 'Lato', 'Poppins', 'Arial'],
+      title: ['Ravensara Antiqua Stencil Light', 'Arial', 'Lato'],
     },
     extend: {
       colors: {
-        'base-100': '#0D0D0D',
-        'base-200': '#F4E0A4',
-        'base-content': '#F4E0A4',
-        'light-content': '#F3E2AF',
+        'base-100': '#1c211e',
+        'base-200': '#e3f7d3',
+        'base-content': '#e3f7d3',
+        'light-content': '#E9F7DD',
         'hide-content': '#B7B6AF',
         primary: '#C05749',
-        secondary: '#F1CB5D',
+        secondary: '#E9F7DD',
         accent: '#36EB67',
       },
       textColor: {
