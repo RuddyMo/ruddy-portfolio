@@ -15,43 +15,6 @@
     font-weight: 300; 
     font-style: normal; 
   }
-  @font-face {
-    font-family: 'Chalga VP Light';
-    src: url(/fonts/Chalga\ VP\ Light.woff) format('woff');
-    font-weight: 300; 
-    font-style: normal; 
-  }
-  @font-face {
-    font-family: 'Barlow';
-    font-weight: 600;
-    font-style: italic;
-    src: url(/public/fonts/Barlow-SemiBoldItalic.woff2) format('woff2');
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 400;
-    src: url(/public/fonts/Inter-Regular.woff2) format('woff2');
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 600;
-    src: url(/public/fonts/Inter-SemiBold.woff2) format('woff2');
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Barlow';
-    font-weight: 500;
-    src: url(/public/fonts/Barlow-Medium.woff2) format('woff2');
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Barlow';
-    font-weight: 400;
-    src: url(/public/fonts/Barlow-Regular.woff2) format('woff2');
-    font-display: swap;
-  }
 
   ::selection {
     color: #f9f9f9;
