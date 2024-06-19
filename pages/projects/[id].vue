@@ -18,20 +18,20 @@ interface Project {
 const projects: Record<string, Project> = {
   medical: {
     title: 'Médicale',
-    description: `Réalisation d'une application multiplateforme pour la gestion des patients. Possibilité de créer un rapport PDF en direct avec les données du patient.`,
+    description: `Réalisation d'une application multiplateforme confidentiel pour la gestion des patients. Possibilité de créer un rapport PDF en direct avec les données du patient.`,
     tech: 'Flutter, Isar, Riverpod, Slang',
     live: '',
     code: 'https://github.com/RuddyMo',
     images: ['/img/mockup.webp', '/img/mockup-mobile.webp'],
     id: 0,
   },
-  memorize: {
-    title: 'Memorize',
-    description: `Memory card game that includes some extra features. It's fully playable on mobile.`,
-    tech: 'Javascript, GSAP, Howler.js, CSS, HTML and Parcel. Written in OOP way.',
-    live: '',
-    code: '',
-    images: ['/img/memorize.webp', '/img/memorize-mobile.webp'],
+  emmaPierre: {
+    title: 'EmmaPierre',
+    description: `Réalisation d'un site Web pour un client. Le site est un site e-commerce pour une boutique de bijoux fait main. Fait dans le cadre de mes études`,
+    tech: 'HTML, Tailwind, Flowbite',
+    live: 'https://emmapierre.netlify.app/view/index.html/',
+    code: 'https://github.com/RuddyMo/EmmaPierre',
+    images: ['/img/emmaPierre.webp', '/img/emmaPierre-mobile.webp'],
     id: 1,
   },
 };
@@ -86,11 +86,11 @@ const handleCalcNextProject = () => {
               <BaseBadgeSlim :href="projects[name].live">Live</BaseBadgeSlim>
             </div>
           </div>
-          <BaseTitle
+          <h2
             class="uppercase absolute text-[44px] sm:text-8xl lg:text-9xl sm:left-1/4 sm:absolute bottom-16 sm:right-64 flex justify-center"
           >
             {{ projects[name].title }}
-          </BaseTitle>
+          </h2>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@ const handleCalcNextProject = () => {
   height: 1px;
   bottom: 0px;
   left: 0;
-  background-color: rgb(243 217 139);
+  background-color: #e3f7d3;
   transition: all 0.3s;
 }
 
@@ -117,7 +117,7 @@ const handleCalcNextProject = () => {
   height: 1px;
   bottom: 0px;
   left: 0;
-  background-color: rgb(243 217 139);
+  background-color: #e3f7d3;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -137,7 +137,7 @@ const handleCalcNextProject = () => {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-color: #dec783;
+  background-color: #e3f7d3;
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }

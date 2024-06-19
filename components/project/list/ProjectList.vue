@@ -142,15 +142,15 @@ function hideImage() {
         Médicale
         <template #desc> Gestionnaire de patient avancé </template>
       </ProjectLink>
-      <!--<ProjectLink
-        id="memorize"
+      <ProjectLink
+        id="emmaPierre"
         :is-show-image="showImage"
-        :to="'projects/memorize'"
-        @mouseenter="handleSwitchImage(['/img/memorize.webp', '/img/memorize-mobile.webp'])"
+        :to="'projects/emmaPierre'"
+        @mouseenter="handleSwitchImage(['/img/emmaPierre.webp', '/img/emmaPierre-mobile.webp'])"
       >
-        Memorize
-        <template #desc> memory card game </template>
-      </ProjectLink>-->
+        Emma Pierre
+        <template #desc>Site e-commerce</template>
+      </ProjectLink>
     </div>
     <img
       ref="image"

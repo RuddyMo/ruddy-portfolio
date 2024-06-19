@@ -5,7 +5,7 @@
       <TheNavbarLink id="navThree" class="opacity-0 sm:mx-8 pointer-events-auto" :to="{ hash: '#description' }">
         Qui suis-je ?</TheNavbarLink
       >
-      <TheNavbarLink id="navTwo" class="opacity-0" to="/projects">projects</TheNavbarLink>
+      <TheNavbarLink id="navTwo" class="opacity-0" to="/projects/medical">projects</TheNavbarLink>
       <TheNavbarLink id="navOne" tabindex="0" class="opacity-0 sm:mx-8" :to="{ hash: '#contact' }"
         >contact
       </TheNavbarLink>
