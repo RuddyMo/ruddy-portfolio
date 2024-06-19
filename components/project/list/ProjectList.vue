@@ -137,7 +137,7 @@ function hideImage() {
         id="medical"
         :to="{ path: 'projects/medical' }"
         :is-show-image="showImage"
-        @mouseenter="handleSwitchImage(['/img/mockup.webp', '/img/mockup-mobile.webp'])"
+        @mouseenter="handleSwitchImage(['/img/medical.webp', '/img/mockup-mobile.webp'])"
       >
         Médicale
         <template #desc> Gestionnaire de patient avancé </template>

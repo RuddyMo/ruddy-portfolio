@@ -22,7 +22,7 @@ const projects: Record<string, Project> = {
     tech: 'Flutter, Isar, Riverpod, Slang',
     live: '',
     code: 'https://github.com/RuddyMo',
-    images: ['/img/mockup.webp', '/img/mockup-mobile.webp'],
+    images: ['/img/medical.webp', '/img/medical-mobile.webp'],
     id: 0,
   },
   emmaPierre: {
