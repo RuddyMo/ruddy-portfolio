@@ -22,7 +22,7 @@ module.exports = {
         'base-content': '#e3f7d3',
         'light-content': '#E9F7DD',
         'hide-content': '#B7B6AF',
-        primary: '#C05749',
+        primary: '#597EA4', // #C05749
         secondary: '#E9F7DD',
         accent: '#36EB67',
       },
