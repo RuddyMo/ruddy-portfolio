@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { useStartAnimation } from '../composables/useStartAnimation';
+import CursorPointer from '~/components/pointer/CursorPointer.vue';
 
 useStartAnimation();
 </script>
 
 <template>
   <div class="!bg-red relative max-w-[1440px] w-full flex flex-col items-center">
+    <CursorPointer />
     <TheNavbar />
     <main class="grid grid-cols-12 min-h-screen w-full flex-nowrap pb-12 sm:pb-32">
       <MainContainer>

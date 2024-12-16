@@ -11,6 +11,7 @@ interface Project {
   tech: string;
   live: string;
   code: string;
+  logo: string[];
   images: string[];
   id: number;
 }
@@ -20,6 +21,7 @@ const projects: Record<string, Project> = {
     title: 'Médicale',
     description: `Réalisation d'une application multiplateforme confidentiel pour la gestion des patients. Possibilité de créer un rapport PDF en direct avec les données du patient.`,
     tech: 'Flutter, Isar, Riverpod, Slang',
+    logo: ['/img/tech/flutter.svg'],
     live: '',
     code: 'https://github.com/RuddyMo',
     images: ['/img/medical.webp', '/img/medical-mobile.webp'],
@@ -29,6 +31,7 @@ const projects: Record<string, Project> = {
     title: 'EmmaPierre',
     description: `Réalisation d'un site Web pour un client. Le site est un site e-commerce pour une boutique de bijoux fait main. Fait dans le cadre de mes études`,
     tech: 'HTML, Tailwind, Flowbite',
+    logo: ['/img/tech/flutter.svg'],
     live: 'https://emmapierre.netlify.app/view/index.html/',
     code: 'https://github.com/RuddyMo/EmmaPierre',
     images: ['/img/emmaPierre.webp', '/img/emmaPierre-mobile.webp'],
@@ -64,7 +67,7 @@ const handleCalcNextProject = () => {
         >
         <NuxtLink
           class="under relative inline-block outline-none outline-custom"
-          :to="{ path: `/projects/${handleCalcNextProject()}` }"
+          :to="{ name: 'projects-id', params: { id: handleCalcNextProject() } }"
           :replace="true"
           >Suivant</NuxtLink
         >
@@ -81,6 +84,18 @@ const handleCalcNextProject = () => {
           <div class="flex flex-col gap-6 sm:gap-8">
             <p class="flex flex-wrap max-w-prose">{{ projects[name].description }}</p>
             <p class="flex flex-wrap max-w-prose italic">{{ projects[name].tech }}</p>
+            <div class="flex">
+              <img
+                :src="projects[name].logo[0]"
+                alt="Logo du projet"
+                class="h-16 flex hover:scale-125 transition-all ease-in"
+              />
+              <img
+                :src="projects[name].logo[0]"
+                alt="Logo du projet"
+                class="h-16 flex hover:scale-125 transition-all ease-in"
+              />
+            </div>
             <div class="flex flex-row gap-4 pb-8">
               <BaseBadgeSlim :href="projects[name].code"> Code</BaseBadgeSlim>
               <BaseBadgeSlim :href="projects[name].live">Live</BaseBadgeSlim>
