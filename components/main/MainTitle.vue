@@ -72,6 +72,7 @@ function split() {
   >
     <slot />
   </h1>
+  <h2 class="text-[100px] text-white absolute left-1 hidden">Ruddy</h2>
 </template>
 
 <style>
