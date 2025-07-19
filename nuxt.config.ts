@@ -3,6 +3,7 @@
 import { resolve } from 'path';
 
 export default defineNuxtConfig({
+  compatibilityDate: '2025-07-19',
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     keepalive: true,

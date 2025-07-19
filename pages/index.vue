@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useStartAnimation } from '../composables/useStartAnimation';
+import MainExperience from '~/components/main/MainExperience.vue';
 import CursorPointer from '~/components/pointer/CursorPointer.vue';
 
 useStartAnimation();
@@ -14,8 +15,8 @@ useStartAnimation();
         <MainTitle />
         <MainAbout id="description" />
       </MainContainer>
-
       <MainTechnologies />
+      <MainExperience />
       <ProjectList />
     </main>
     <footer id="contact" class="relative flex flex-col justify-center items-center text-center z-30 h-screen">
