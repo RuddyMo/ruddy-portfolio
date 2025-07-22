@@ -144,7 +144,7 @@ export function useStartAnimation() {
       });
 
     tl.to('#headSubOne', { opacity: 1, duration: 0.4, delay: 0.8 })
-      .to(['#headSubTwo', '#navOne', '#navTwo', '#navThree'], { opacity: 1, duration: 0.5 }, '-=0.3')
+      .to(['#headSubTwo', '#navOne', '#navTwo', '#navThree', '#navFour'], { opacity: 1, duration: 0.5 }, '-=0.3')
       .to('#headSubThree', { opacity: 1, duration: 0.4 }, '-=0.3')
       .to('#headDivider', { x: 0, duration: 0.5, ease: Power2.easeOut }, '-=0.8')
       .to('#subOne', { opacity: 1, duration: 0.5 }, '-=.8');
