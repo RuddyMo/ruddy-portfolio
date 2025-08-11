@@ -41,7 +41,7 @@ const projects: Record<string, Project> = {
 const name = route.params.id as string;
 
 const handleCalcNextProject = () => {
-  const currentProjectId = projects[name].id;
+  const currentProjectId = projects[name]?.id ?? 0;
 
   const nextProjectId = (currentProjectId + 1) % Object.keys(projects).length === 0 ? 0 : currentProjectId + 1;
 
@@ -76,35 +76,35 @@ const handleCalcNextProject = () => {
     <div class="flex flex-col lg:flex-row justify-between gap-4 sm:gap-12">
       <img
         class="relative max-h-36 lg:w-1/2 sm:max-h-[80vh] object-cover"
-        :src="lgAndSmaller ? projects[name].images[1] : projects[name].images[0]"
+        :src="lgAndSmaller ? projects[name]?.images?.[1] : projects[name]?.images?.[0]"
         alt="Project presentation "
       />
       <div>
         <div class="flex flex-col justify-between items-center">
           <div class="flex flex-col gap-6 sm:gap-8">
-            <p class="flex flex-wrap max-w-prose">{{ projects[name].description }}</p>
-            <p class="flex flex-wrap max-w-prose italic">{{ projects[name].tech }}</p>
+            <p class="flex flex-wrap max-w-prose">{{ projects[name]?.description }}</p>
+            <p class="flex flex-wrap max-w-prose italic">{{ projects[name]?.tech }}</p>
             <div class="flex">
               <img
-                :src="projects[name].logo[0]"
+                :src="projects[name]?.logo[0]"
                 alt="Logo du projet"
                 class="h-16 flex hover:scale-125 transition-all ease-in"
               />
               <img
-                :src="projects[name].logo[0]"
+                :src="projects[name]?.logo[0]"
                 alt="Logo du projet"
                 class="h-16 flex hover:scale-125 transition-all ease-in"
               />
             </div>
             <div class="flex flex-row gap-4 pb-8">
-              <BaseBadgeSlim :href="projects[name].code"> Code</BaseBadgeSlim>
-              <BaseBadgeSlim :href="projects[name].live">Live</BaseBadgeSlim>
+              <BaseBadgeSlim :href="projects[name]?.code"> Code</BaseBadgeSlim>
+              <BaseBadgeSlim :href="projects[name]?.live">Live</BaseBadgeSlim>
             </div>
           </div>
           <h2
             class="uppercase absolute text-[44px] sm:text-8xl lg:text-9xl sm:left-1/4 sm:absolute bottom-16 sm:right-64 flex justify-center"
           >
-            {{ projects[name].title }}
+            {{ projects[name]?.title }}
           </h2>
         </div>
       </div>
@@ -120,7 +120,7 @@ const handleCalcNextProject = () => {
   height: 1px;
   bottom: 0px;
   left: 0;
-  background-color: #e3f7d3;
+  background-color: #F5F3E8;
   transition: all 0.3s;
 }
 
@@ -132,7 +132,7 @@ const handleCalcNextProject = () => {
   height: 1px;
   bottom: 0px;
   left: 0;
-  background-color: #e3f7d3;
+  background-color: #F5F3E8;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -152,7 +152,7 @@ const handleCalcNextProject = () => {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-color: #e3f7d3;
+  background-color: #F5F3E8;
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }

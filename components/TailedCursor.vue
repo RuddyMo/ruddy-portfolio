@@ -1,7 +1,7 @@
 <template>
   <div
     ref="containerRef"
-    class="relative w-full h-full"
+    class="relative w-full h-full pointer-events-none"
   />
 </template>
 

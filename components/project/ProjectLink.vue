@@ -25,7 +25,7 @@ defineProps<Props>();
 
 <style scoped>
 .textIsActive > * {
-  color: #e3f7d3 !important;
+  color: #F5F3E8 !important;
   opacity: 100 !important;
   transition: all 0.3s;
 }
@@ -37,7 +37,7 @@ defineProps<Props>();
   height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #e3f7d3;
+  background-color: #F5F3E8;
   transform-origin: bottom right;
   transition: transform 0.45s ease-out;
 }

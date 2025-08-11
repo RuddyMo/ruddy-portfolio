@@ -83,11 +83,11 @@ function split() {
 }
 
 .shadow-letter {
-  text-shadow: 0 0 10px #e3f7d393, 0 0 20px #b0ee9693, 0 0 30px #50794293;
+  text-shadow: 0 0 10px #F5F3E8, 0 0 20px #8B665B, 0 0 30px #58463F;
   transition: 0.3s;
 }
 
 .shadow-alt:hover {
-  text-shadow: 0 0 10px #e3f7d393, 0 0 20px #b0ee9693, 0 0 30px #50794293;
+  text-shadow: 0 0 10px #F5F3E8, 0 0 20px #8B665B, 0 0 30px #58463F;
 }
 </style>

@@ -40,47 +40,45 @@ useStartAnimation();
 
 <template>
     <div class="!bg-red relative max-w-[1440px] w-full flex flex-col items-center">
-    <!-- TailedCursor en arrière-plan fixe -->
     <div 
-      class="fixed inset-0 w-full h-full z-0"
+      class="fixed inset-0 w-full h-full z-20 pointer-events-none"
       :class="{ 'opacity-0': isProjectListHovered }"
     >
       <TailedCursor
         :base-thickness="30"
-        :colors="['#ffffff']"
+        :colors="['#58463F']"
         :speed-multiplier="0.5"
         :max-age="500"
         :enable-fade="false"
         :enable-shader-effect="false"
       />
     </div>
-    <div class="relative z-10 w-full">
+    <div class="relative z-30 w-full">
       <TheNavbar />
-      <main class="grid grid-cols-12 min-h-screen w-full flex-nowrap pb-12 sm:pb-32">
+      <main class="grid grid-cols-12 min-h-screen w-full flex-nowrap pb-12 sm:pb-32 ">
         <MainContainer>
           <MainTitle />
           <MainAbout id="description" />
         </MainContainer>
         <MainTechnologies />
-        <section id="experience" class="col-span-12 py-20 px-6">
+        <section class="col-span-12 py-20 px-6">
           <div class="max-w-5xl mx-auto">
             <BaseTitle class='relative project-title text-center pb-34 opacity-0 z-10 transition text-5xl'>Experience</BaseTitle>
             <div class="max-w-4xl mx-auto">
-              <ExperienceTimeline
+              <ExperienceTimeline id="experience"
                 class="border-gray-200 dark:border-gray-700 pt-8"
                 :list="experience"
               />
             </div>
           </div>
         </section>
-        
         <ProjectList class='pt-16' @mouseenter="isProjectListHovered = true"
           @mouseleave="isProjectListHovered = false" />
       </main>
-    <footer class="relative flex flex-col justify-center items-center text-center z-30 h-screen">
+    </div>
+    <footer class="relative flex flex-col justify-center items-center text-center z-10 h-screen">
       <FooterContact />
       <FooterAuthor id="contact">Portfolio de Ruddy Morel © 2024</FooterAuthor>
     </footer>
-    </div>
   </div>
 </template>

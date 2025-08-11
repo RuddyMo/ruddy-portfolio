@@ -30,7 +30,7 @@ defineProps<Props>();
   height: 1px;
   bottom: 0px;
   left: 0;
-  background-color: #e3f7d3;
+  background-color: #F5F3E8;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

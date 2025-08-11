@@ -1,6 +1,6 @@
 <template>
   <a
-    class="badge relative p-4 md:p-8 lg:p-12 w-full text-xl md:text-3xl lg:text-5xl cursor-pointer uppercase border-base-100 h-12 border rounded-[48px] text-base-100 flex justify-center items-center font-bold text-x transition overflow-hidden z-10 outline-custom hover:text-base-200"
+    class="badge relative p-4 md:p-8 lg:p-12 w-full text-xl md:text-3xl lg:text-5xl cursor-pointer uppercase border-base-100 h-12 border rounded-[48px] text-base-100 flex justify-center items-center font-bold text-x transition overflow-hidden z-10 outline-custom hover:text-base-content"
   >
     <slot />
   </a>
@@ -16,7 +16,7 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-color: #1c211e;
+  background-color: #A77864;
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
