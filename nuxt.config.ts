@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            "Développeur full-stack ouvert d'esprit et soucieux des détails, compétent en Javascript, Vue, HTML, CSS, Tailwind, et bien d'autres technologies.",
+            "Développeur Front-end ouvert d'esprit et soucieux des détails, compétent en Javascript, Vue, HTML, CSS, Tailwind, et bien d'autres technologies.",
         },
       ],
       link: [

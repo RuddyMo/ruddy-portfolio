@@ -17,25 +17,35 @@ interface Project {
 }
 
 const projects: Record<string, Project> = {
+  photographie: {
+    title: 'Photographie',
+    description: `Réalisation d'un site Web pour un client. Le site est un site vitrine pour photographe`,
+    tech: 'Nuxt, Tailwind CSS, TypeScript',
+    logo: ['/img/tech/nuxt.svg', '/img/tech/tailwind.svg', '/img/tech/typescript.svg'],
+    live: 'https://dylan-website-alpha.vercel.app/',
+    code: 'https://github.com/RuddyMo/dylan-website',
+    images: ['/img/sitephoto.webp', '/img/sitephoto-mobile.webp'],
+    id: 0,
+  },
   medical: {
     title: 'Médicale',
     description: `Réalisation d'une application multiplateforme confidentiel pour la gestion des patients. Possibilité de créer un rapport PDF en direct avec les données du patient.`,
-    tech: 'Flutter, Isar, Riverpod, Slang',
-    logo: ['/img/tech/flutter.svg'],
+    tech: 'Flutter, Isar, Riverpod',
+    logo: ['/img/tech/flutter.svg', '/img/tech/isar.svg', '/img/tech/riverpod.svg'],
     live: '',
-    code: 'https://github.com/RuddyMo',
+    code: '',
     images: ['/img/medical.webp', '/img/medical-mobile.webp'],
-    id: 0,
+    id: 1,
   },
   emmaPierre: {
     title: 'EmmaPierre',
     description: `Réalisation d'un site Web pour un client. Le site est un site e-commerce pour une boutique de bijoux fait main. Fait dans le cadre de mes études`,
     tech: 'HTML, Tailwind, Flowbite',
-    logo: ['/img/tech/flutter.svg'],
+    logo: ['/img/tech/html.svg', '/img/tech/tailwind.svg', '/img/tech/flowbite.svg'],
     live: 'https://emmapierre.netlify.app/view/index.html/',
     code: 'https://github.com/RuddyMo/EmmaPierre',
     images: ['/img/emmaPierre.webp', '/img/emmaPierre-mobile.webp'],
-    id: 1,
+    id: 2,
   },
 };
 const name = route.params.id as string;
@@ -46,6 +56,15 @@ const handleCalcNextProject = () => {
   const nextProjectId = (currentProjectId + 1) % Object.keys(projects).length === 0 ? 0 : currentProjectId + 1;
 
   return Object.keys(projects)[nextProjectId];
+};
+
+const handleCalcPrevProject = () => {
+  const currentProjectId = projects[name]?.id ?? 0;
+  const totalProjects = Object.keys(projects).length;
+  
+  const prevProjectId = currentProjectId === 0 ? totalProjects - 1 : currentProjectId - 1;
+
+  return Object.keys(projects)[prevProjectId];
 };
 </script>
 
@@ -58,8 +77,8 @@ const handleCalcNextProject = () => {
         <NuxtLink
           tabindex="0"
           class="under relative inline-block outline-none outline-custom cursor-pointer"
-          @click="router.back()"
-          @keyup.enter="router.back()"
+          :to="{ name: 'projects-id', params: { id: handleCalcPrevProject() } }"
+          :replace="true"
           >Retour</NuxtLink
         >
         <NuxtLink class="under hidden relative sm:inline-block outline-none outline-custom" :to="{ path: '/' }"
@@ -75,7 +94,7 @@ const handleCalcNextProject = () => {
     </div>
     <div class="flex flex-col lg:flex-row justify-between gap-4 sm:gap-12">
       <img
-        class="relative max-h-36 lg:w-1/2 sm:max-h-[80vh] object-cover"
+        class="relative max-h-36 lg:w-1/2 sm:max-h-[50vh] object-cover"
         :src="lgAndSmaller ? projects[name]?.images?.[1] : projects[name]?.images?.[0]"
         alt="Project presentation "
       />
@@ -88,12 +107,17 @@ const handleCalcNextProject = () => {
               <img
                 :src="projects[name]?.logo[0]"
                 alt="Logo du projet"
-                class="h-16 flex hover:scale-125 transition-all ease-in"
+                class="h-16 flex hover:scale-110 transition-all ease-in"
               />
               <img
-                :src="projects[name]?.logo[0]"
+                :src="projects[name]?.logo[1]"
                 alt="Logo du projet"
-                class="h-16 flex hover:scale-125 transition-all ease-in"
+                class="h-16 flex hover:scale-110 transition-all ease-in"
+              />
+              <img
+                :src="projects[name]?.logo[2]"
+                alt="Logo du projet"
+                class="h-16 flex hover:scale-110 transition-all ease-in"
               />
             </div>
             <div class="flex flex-row gap-4 pb-8">

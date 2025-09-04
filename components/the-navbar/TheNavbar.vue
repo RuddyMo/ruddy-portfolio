@@ -6,7 +6,7 @@
         Qui suis-je ?</TheNavbarLink
       >
       <TheNavbarLink id="navTwo" class="opacity-0 sm:mx-6" :to="{ hash: '#experience' }">expérience</TheNavbarLink>
-      <TheNavbarLink id="navThree" class="opacity-0 sm:mx-6" to="/projects/medical">projects</TheNavbarLink>
+      <TheNavbarLink id="navThree" class="opacity-0 sm:mx-6" to="/projects/photographie">projects</TheNavbarLink>
       <TheNavbarLink id="navFour" tabindex="0" class="opacity-0 sm:mx-6" :to="{ hash: '#contact' }"
         >contact
       </TheNavbarLink>

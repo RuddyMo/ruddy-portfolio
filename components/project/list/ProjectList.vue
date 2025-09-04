@@ -17,26 +17,6 @@ const power = computed(() => xMouseImg.value - imgWidth.value / 2);
 
 gsap.registerPlugin(ScrollTrigger);
 
-if (process.client && lgAndSmaller.value) {
-  const projectsGSAP = gsap.utils.toArray('.project');
-
-  projectsGSAP.forEach((project) => {
-    gsap.to('.project', {
-      scrollTrigger: {
-        trigger: project as HTMLElement,
-        start: 'center center',
-        end: '+=130',
-        toggleClass: 'textIsActive',
-        onEnter: handleShowMobile,
-        onLeave: handleHideMobile,
-        onEnterBack: handleShowMobile,
-        onLeaveBack: handleHideLeaveBackMobile,
-        scrub: true,
-      },
-    });
-  });
-}
-
 function handleShowMobile(e: ScrollTrigger) {
   const projectName = e?.trigger?.id;
   e.trigger?.setAttribute('mouse', '1');
@@ -116,6 +96,30 @@ function hideImage() {
     height: 0,
   });
 }
+
+onMounted(() => {
+  if (process.client && lgAndSmaller.value) {
+    nextTick(() => {
+      const projectsGSAP = gsap.utils.toArray('.project');
+
+      projectsGSAP.forEach((project) => {
+        gsap.to('.project', {
+          scrollTrigger: {
+            trigger: project as HTMLElement,
+            start: 'center center',
+            end: '+=130',
+            toggleClass: 'textIsActive',
+            onEnter: handleShowMobile,
+            onLeave: handleHideMobile,
+            onEnterBack: handleShowMobile,
+            onLeaveBack: handleHideLeaveBackMobile,
+            scrub: true,
+          },
+        });
+      });
+    });
+  }
+});
 </script>
 
 <template>
@@ -134,10 +138,19 @@ function hideImage() {
       @click="handleHideImage"
     >
       <ProjectLink
+        id="photographie"
+        :to="{ path: 'projects/photographie' }"
+        :is-show-image="showImage"
+        @mouseenter="handleSwitchImage(['/img/sitephoto.webp', '/img/sitephoto-mobile.webp'])"
+      >
+        Photographie
+        <template #desc> Site vitrine pour photographe </template>
+      </ProjectLink>
+      <ProjectLink
         id="medical"
         :to="{ path: 'projects/medical' }"
         :is-show-image="showImage"
-        @mouseenter="handleSwitchImage(['/img/medical.webp', '/img/mockup-mobile.webp'])"
+        @mouseenter="handleSwitchImage(['/img/medical.webp', '/img/medical-mobile.webp'])"
       >
         Médicale
         <template #desc> Gestionnaire de patient avancé </template>
